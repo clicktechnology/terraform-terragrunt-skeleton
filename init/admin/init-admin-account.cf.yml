@@ -44,7 +44,7 @@ Resources:
     UpdateReplacePolicy: Delete
     Properties:
       BucketName: !Ref StateLogBucketName
-      AccessControl: LogDeliveryWrite
+      #AccessControl: LogDeliveryWrite
       BucketEncryption:
         ServerSideEncryptionConfiguration:
           - ServerSideEncryptionByDefault:
