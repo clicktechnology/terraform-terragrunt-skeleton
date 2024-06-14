@@ -1,11 +1,11 @@
 ADMIN_INIT_STACK_NAME := tf-admin-init
-STATE_BUCKET_NAME := terraform-skeleton-state
-STATE_LOG_BUCKET_NAME := terraform-skeleton-state-logs
-LOCK_TABLE_NAME := terraform-skeleton-state-locks
+STATE_BUCKET_NAME := cloudguyinbroadstone-x
+STATE_LOG_BUCKET_NAME := cloudguyinbroadstone-x-logs
+LOCK_TABLE_NAME := terraform-db-x
 
 # Use a known profile to ensure account ID is correct
 ADMIN_ACCOUNT_ID := $(shell \
-	aws --profile tf-admin-account sts get-caller-identity | jq -r .Account \
+	aws --profile iamadmin-general sts get-caller-identity | jq -r .Account \
 )
 
 BACKEND_ROLE_PATH := terraform/TerraformBackend

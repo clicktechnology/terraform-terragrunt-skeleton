@@ -40,8 +40,8 @@ Rules:
 Resources:
   TerraformStateLogBucket:
     Type: 'AWS::S3::Bucket'
-    DeletionPolicy: Retain
-    UpdateReplacePolicy: Retain
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
     Properties:
       BucketName: !Ref StateLogBucketName
       AccessControl: LogDeliveryWrite
@@ -57,8 +57,8 @@ Resources:
 
   TerraformStateBucket:
     Type: 'AWS::S3::Bucket'
-    DeletionPolicy: Retain
-    UpdateReplacePolicy: Retain
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
     Properties:
       BucketName: !Ref StateBucketName
       BucketEncryption:
@@ -78,8 +78,8 @@ Resources:
 
   TerraformStateLockTable:
     Type: 'AWS::DynamoDB::Table'
-    DeletionPolicy: Retain
-    UpdateReplacePolicy: Retain
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
     Properties:
       TableName: !Ref LockTableName
       AttributeDefinitions:
@@ -146,8 +146,8 @@ Resources:
 
   TerraformStateBucketPolicy:
     Type: 'AWS::S3::BucketPolicy'
-    DeletionPolicy: Retain
-    UpdateReplacePolicy: Retain
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
     Properties:
       Bucket: !Ref TerraformStateBucket
       PolicyDocument:

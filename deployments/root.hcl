@@ -46,15 +46,15 @@ remote_state {
     if_exists = "overwrite"
   }
   config = {
-    bucket   = "terraform-skeleton-state"
-    region   = "us-east-1"
+    bucket   = "cloudguy-terraform"
+    region   = "eu-west-2"
     encrypt  = true
     role_arn = "arn:aws:iam::${get_aws_account_id()}:role/terraform/TerraformBackend"
 
     key = "${dirname(local.relative_deployment_path)}/${local.stack}.tfstate"
 
-    dynamodb_table            = "terraform-skeleton-state-locks"
-    accesslogging_bucket_name = "terraform-skeleton-state-logs"
+    dynamodb_table            = "terraform-db"
+    accesslogging_bucket_name = "cloudguy-terraform"
   }
 }
 
